@@ -1,9 +1,38 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import QuizScreen from '../../src/screens/Quiz';
 
-export default function QuizDaGaleraPage() {
+export default function QuizDaGaleraPage({ dbExterno }) {
   return (
-    <div>
-      Desafio da próxima aula junto com as animações
-    </div>
+    <ThemeProvider theme={dbExterno.theme}>
+      <QuizScreen
+        externalQuestions={dbExterno.questions}
+        externalBg={dbExterno.bg}
+      />
+      {/* <pre style={{ color: 'black' }}>
+        {JSON.stringify(dbExterno, null, 4)}
+      </pre> */}
+    </ThemeProvider>
   );
+}
+export async function getServerSideProps(context) {
+  const [projectName, githubUser] = context.query.id.split('___');
+  const dbExterno = await fetch(`https://${projectName}.${githubUser}.vercel.app/api/db`)
+    .then((respostaDoServer) => {
+      if (respostaDoServer.ok) {
+        return respostaDoServer.json();
+      }
+      throw new Error('Falha em pegar os dados');
+    })
+    .then((respostaConvertidaEmObjeto) => respostaConvertidaEmObjeto)
+    .catch((err) => {
+      throw new Error(err);
+    });
+
+  return {
+    props: {
+      dbExterno,
+    },
+  };
 }

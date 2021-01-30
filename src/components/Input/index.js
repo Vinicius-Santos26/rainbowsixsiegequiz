@@ -12,6 +12,10 @@ const InputBase = styled.input`
   border-radius: ${({ theme }) => theme.borderRadius};
   outline: 0;
   margin-bottom: 25px;
+  ::placeholder { 
+    color: ${({ theme }) => theme.colors.contrastText};
+    opacity: 1;
+  }
 `;
 
 export default function Input({ onChange, placeholder, ...props }) {

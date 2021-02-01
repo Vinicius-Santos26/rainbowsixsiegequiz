@@ -8,6 +8,7 @@ export default function QuizDaGaleraPage({ dbExterno }) {
       <QuizScreen
         questions={dbExterno.questions}
         background={dbExterno.bg}
+        isMyQuiz={false}
       />
     </ThemeProvider>
   );

@@ -15,6 +15,7 @@ export default function QuestionWidget({
   questionIndex,
   onSubmit,
   addResult,
+  isMyQuiz
 }) {
   const { t } = useTranslation('quiz');
 
@@ -29,9 +30,9 @@ export default function QuestionWidget({
       <Widget.Header>
         <BackLinkArrow href="/" />
         <h3>
-          {`${t('pergunta')} ${questionIndex + 1} / ${qtdQuestions}`}
+          {isMyQuiz ? `${t('pergunta')} ${questionIndex + 1} / ${qtdQuestions}` : `Pergunta ${questionIndex + 1} / ${qtdQuestions}`}
         </h3>
-        <LanguageSelect/>
+        {isMyQuiz && <LanguageSelect/>}
       </Widget.Header>
       <img
         alt="Descrição"
@@ -44,8 +45,9 @@ export default function QuestionWidget({
       />
       <Widget.Content>
         <h2>
-          {t(`questions.${questionIndex}.title`)}
+          {isMyQuiz ? t(`questions.${questionIndex}.title`) : question.title}
         </h2>
+        {!isMyQuiz && <p>{question.description}</p>}
         <AlternativesForm
           onSubmit={(event) => {
             event.preventDefault();
@@ -78,15 +80,15 @@ export default function QuestionWidget({
                   onChange={() => setSelectedAlternative(alternativeIndex)}
                   type="radio"
                 />
-                {t(`questions.${questionIndex}.alternatives.${alternativeId}`)}
+                {isMyQuiz ? t(`questions.${questionIndex}.alternatives.${alternativeId}`) : alternative}
               </Widget.Topic>
             );
           })}
           <Button type="submit" disabled={!hasAlternativeSelected}>
-            {t('confirmar')}
+            {isMyQuiz ? t('confirmar') : 'Confirmar'}
           </Button>
-          {isFormSubmited && isCorrect && <p>{t('voce-acertou')}</p>}
-          {isFormSubmited && !isCorrect && <p>{t('voce-errou')}</p>}
+          {isFormSubmited && isCorrect && (isMyQuiz ? <p>{t('voce-acertou')}</p> : <p>Você acertou</p>)}
+          {isFormSubmited && !isCorrect && (isMyQuiz ? <p>{t('voce-errou')}</p> : <p>Você errou</p>)}
         </AlternativesForm>
       </Widget.Content>
     </Widget>
@@ -103,4 +105,5 @@ QuestionWidget.propTypes = {
   questionIndex: PropTypes.number.isRequired,
   onSubmit: PropTypes.func.isRequired,
   addResult: PropTypes.func.isRequired,
+  isMyQuiz: PropTypes.bool.isRequired,
 };

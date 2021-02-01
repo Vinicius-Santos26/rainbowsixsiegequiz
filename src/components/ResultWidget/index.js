@@ -10,7 +10,7 @@ import Widget from '../Widget';
 import BackLinkArrow from '../BackLinkArrow';
 import LanguageSelect from '../LanguageSelect';
 
-export default function ResultWidget({ results }) {
+export default function ResultWidget({ results, isMyQuiz}) {
   const { t } = useTranslation('quiz');
   const qtdAcertos = results.filter((x) => x).length;
   const router = useRouter();
@@ -21,14 +21,14 @@ export default function ResultWidget({ results }) {
     <Widget>
       <Widget.Header>
         <BackLinkArrow href="/" />
-        <h3>{t('resultado')}</h3>
-        <LanguageSelect/>
+        <h3>{ isMyQuiz ? t('resultado') : 'Resultado'}</h3>
+        {isMyQuiz && <LanguageSelect/>}
       </Widget.Header>
 
       <Widget.Content>
         {qtdAcertos > 0 ? (
           <p>
-            {`${t('parabens')} ${name}. ${t('voce-acertou')} ${qtdAcertos} ${t('perguntas')}`}
+            { isMyQuiz ? `${t('parabens')} ${name}. ${t('voce-acertou')} ${qtdAcertos} ${t('perguntas')}` : `Você acertou ${qtdAcertos} perguntas`}
             <Lottie 
               width="200px"
               height="200px"
@@ -38,16 +38,17 @@ export default function ResultWidget({ results }) {
           </p>
         ) : (
             <p>
-              {t('tente-novamente')}
+              { isMyQuiz ? t('tente-novamente') : 'Não foi dessa vez tente novamente :('}
             </p>
           )}
         <ul>
           {results.map((result, index) => (
             <li key={`result_${index + 1}`}>
-              { `#${index + 1} ${t('pergunta')}: `}
+              { `#${index + 1} ${ isMyQuiz ? t('pergunta'): 'Pergunta'}: `}
               {result === true
-                ? t('acertou')
-                : t('errou')}
+                ? (isMyQuiz ? t('acertou') : 'Acertou')
+                : (isMyQuiz ? t('errou') : 'Errou')
+              }
             </li>
           ))}
         </ul>
@@ -58,4 +59,5 @@ export default function ResultWidget({ results }) {
 
 ResultWidget.propTypes = {
   results: PropTypes.arrayOf(PropTypes.object).isRequired,
+  isMyQuiz: PropTypes.bool.isRequired,
 };

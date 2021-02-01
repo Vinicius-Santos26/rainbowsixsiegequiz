@@ -92,8 +92,8 @@ export default function Home() {
                   <li key={linkExterno}>
                     <Widget.Topic
                       as={Link}
-                      href={`/quiz/${projectName}___${githubUser}`}
-                      style={name.length === 0 ? { backgroundColor: '#979797', cursor: 'not-allowed' } : {}}
+                      href={`/quiz/${projectName}___${githubUser}?name=${name}`}
+                      style={name.length === 0 ? { backgroundColor: '#979797', cursor: 'not-allowed', pointerEvents: 'none' } : {}}
                     >
                       {`${githubUser}/${projectName}`}
                     </Widget.Topic>

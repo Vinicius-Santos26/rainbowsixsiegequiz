@@ -15,7 +15,7 @@ const screenStates = {
   RESULT: 'RESULT',
 };
 
-export default function QuizScreen({ questions, background }) {
+export default function QuizScreen({ questions, background, isMyQuiz}) {
   const [screenState, setScreenState] = useState(screenStates.LOADING);
   const [results, setResults] = useState([]);
   const qtdQuestions = questions.length;
@@ -61,9 +61,10 @@ export default function QuizScreen({ questions, background }) {
             questionIndex={questionIndex}
             onSubmit={handleSubmitQuiz}
             addResult={addResult}
+            isMyQuiz={isMyQuiz}
           />
         )}
-        {screenState === screenStates.RESULT && <ResultWidget results={results} />}
+        {screenState === screenStates.RESULT && <ResultWidget results={results} isMyQuiz={isMyQuiz} />}
       </QuizContainer>
     </QuizBackground>
   );
@@ -76,4 +77,5 @@ QuizScreen.propTypes = {
     alternatives: PropTypes.arrayOf(PropTypes.string).isRequired,
   })).isRequired,
   background: PropTypes.string.isRequired,
+  isMyQuiz: PropTypes.bool.isRequired
 };

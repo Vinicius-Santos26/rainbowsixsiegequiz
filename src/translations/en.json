@@ -1,0 +1,66 @@
+{
+  "title": "Rainbow Six Siege - Quiz",
+  "description": "Test your knowledge of Rainbow Six Siege.",
+  "placeholder": "Say your name",
+  "jogar": "Let's Play ",
+  "quiz-galera": "Community Quizzes",
+  "alura": "Proudly created during the ",
+  "imersao": "Alura's React Immersion",
+  "questions": {
+    "0":{
+      "title": "Which of these maps does the Blood Orchid operation belong to?",
+      "alternatives": {
+        "alternative_0": "Skyscraper",
+        "alternative_1": "Coastline",
+        "alternative_2": "Theme Park",
+        "alternative_3": "Tower"
+      }
+    },
+    "1":{
+      "title": "Which of these operators never had a grenade?",
+      "alternatives": {
+        "alternative_0": "Thermite",
+        "alternative_1": "Jackal",
+        "alternative_2": "Capitão",
+        "alternative_3": "Buck"
+      }
+    },
+    "2":{
+      "title": "Which of these operators was playable at the Outbreak event?",
+      "alternatives": {
+        "alternative_0": "Kapkan",
+        "alternative_1": "Pulse",
+        "alternative_2": "Mira",
+        "alternative_3": "Caveira"
+      }
+    },
+    "3":{
+      "title": "Which of these operators does not have an elite set?",
+      "alternatives": {
+        "alternative_0": "Hibana",
+        "alternative_1": "Caveira",
+        "alternative_2": "Lesion",
+        "alternative_3": "Castle"
+      }
+    },
+    "4":{
+      "title": "What was the operation that added the sisters Zofia and Ela to the siege?",
+      "alternatives": {
+        "alternative_0": "White Noise",
+        "alternative_1": "Grim Sky",
+        "alternative_2": "Blood Orchid",
+        "alternative_3": "They came in different operations"
+      }
+    }
+  },
+  "confirmar": "Confirm",
+  "voce-errou": "You missed",
+  "voce-acertou": "You're right",
+  "resultado": "Result",
+  "acertou": "Right",
+  "errou": "Missed",
+  "pergunta": "Question",
+  "parabens": "Congratulations, ",
+  "perguntas": "questions",
+  "tente-novamente": "It was not this time try again :("
+}

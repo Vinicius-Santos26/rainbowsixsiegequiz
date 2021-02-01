@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import QuizScreen from '../../src/screens/Quiz';
@@ -7,15 +6,13 @@ export default function QuizDaGaleraPage({ dbExterno }) {
   return (
     <ThemeProvider theme={dbExterno.theme}>
       <QuizScreen
-        externalQuestions={dbExterno.questions}
-        externalBg={dbExterno.bg}
+        questions={dbExterno.questions}
+        background={dbExterno.bg}
       />
-      {/* <pre style={{ color: 'black' }}>
-        {JSON.stringify(dbExterno, null, 4)}
-      </pre> */}
     </ThemeProvider>
   );
 }
+
 export async function getServerSideProps(context) {
   const [projectName, githubUser] = context.query.id.split('___');
   const dbExterno = await fetch(`https://${projectName}.${githubUser}.vercel.app/api/db`)
@@ -36,3 +33,5 @@ export async function getServerSideProps(context) {
     },
   };
 }
+
+

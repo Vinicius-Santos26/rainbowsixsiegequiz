@@ -1,8 +1,12 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
+import '../../utils/i18n';
 
 const FooterWrapper = styled.footer`
-  background-color: #000070;
+  background-color: ${({ theme }) => theme.colors.mainBg};
+  border: 1px solid ${({ theme }) => theme.colors.primary};
   padding: 20px;
   display: flex;
   align-items: center;
@@ -26,19 +30,18 @@ const FooterWrapper = styled.footer`
 `;
 
 export default function Footer(props) {
+  const { t } = useTranslation('quiz');
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
     <FooterWrapper {...props}>
       <a href="https://www.alura.com.br/">
         <img src="https://www.alura.com.br/assets/img/alura-logo-white.1570550707.svg" alt="Logo Alura" />
       </a>
       <p>
-        Orgulhosamente criado durante
-        {' '}
-        a
-        {' '}
+        {t('alura')}
         <a href="https://www.alura.com.br/">
-          <span>Imersão React da Alura</span>
+          <span>
+            {t('imersao')}
+          </span>
         </a>
       </p>
     </FooterWrapper>

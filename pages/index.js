@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
+import '../src/utils/i18n';
+import { useTranslation } from 'react-i18next';
 
 import db from '../db.json';
 import Widget from '../src/components/Widget';
@@ -13,14 +15,17 @@ import Input from '../src/components/Input';
 import Button from '../src/components/Button';
 import QuizContainer from '../src/components/QuizContainer';
 import Link from '../src/components/Link';
+import LanguageSelect from '../src/components/LanguageSelect';
 
 export default function Home() {
+  const { t } = useTranslation('quiz');
   const router = useRouter();
   const [name, setName] = useState('');
   return (
     <QuizBackground backgroundImage={db.bg}>
       <Head>
-        <title>Alura Quiz</title>
+        <title>{db.title}</title>
+        <meta property="og:image" content={db.bg} />
       </Head>
       <QuizContainer>
         <QuizLogo />
@@ -35,7 +40,8 @@ export default function Home() {
           animate="show"
         >
           <Widget.Header>
-            <h1>Alura Quiz</h1>
+            <h1>{t('title')}</h1>
+            <LanguageSelect/>
           </Widget.Header>
           <Widget.Content>
             <form onSubmit={(event) => {
@@ -43,14 +49,17 @@ export default function Home() {
               router.push(`/quiz?name=${name}`);
             }}
             >
+              <p>
+                {t('description')}
+              </p>
               <Input
                 onChange={(event) => setName(event.target.value)}
-                placeholder="Diz ai seu nome"
+                placeholder={t('placeholder')}
                 name="NomeDoUsuario"
                 value={name}
               />
               <Button type="submit" disabled={name.length === 0}>
-                {`Jogar ${name}`}
+                {t('jogar') + name}
               </Button>
             </form>
           </Widget.Content>
@@ -65,8 +74,12 @@ export default function Home() {
           initial="hidden"
           animate="show"
         >
+          <Widget.Header>
+            <h1>
+              {t('quiz-galera')}
+            </h1>
+          </Widget.Header>
           <Widget.Content>
-            <h1>Quizes da Galera</h1>
             <ul>
               {db.external.map((linkExterno) => {
                 const [projectName, githubUser] = linkExterno
@@ -80,6 +93,7 @@ export default function Home() {
                     <Widget.Topic
                       as={Link}
                       href={`/quiz/${projectName}___${githubUser}`}
+                      style={name.length === 0 ? { backgroundColor: '#979797', cursor: 'not-allowed' } : {}}
                     >
                       {`${githubUser}/${projectName}`}
                     </Widget.Topic>

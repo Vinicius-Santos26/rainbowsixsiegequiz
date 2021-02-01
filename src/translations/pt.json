@@ -1,0 +1,66 @@
+{
+  "title": "Rainbow Six Siege - Quiz",
+  "description": "Teste os seus conhecimento sobre Rainbow Six Siege.",
+  "placeholder": "Diz ai seu nome",
+  "jogar": "Vamos Jogar ",
+  "quiz-galera": "Quizzes da Galera",
+  "alura": "Orgulhosamente criado durante a ",
+  "imersao": "Imersão React da Alura",
+  "questions": {
+    "0":{
+      "title": "Qual desses mapas pertence a operação Blood Orchid?",
+      "alternatives": {
+        "alternative_0": "Arranha-Céu",
+        "alternative_1": "Litoral",
+        "alternative_2": "Parque temático",
+        "alternative_3": "Torre"
+      }
+    },
+    "1":{
+      "title": "Qual desses operadores nunca teve granada?",
+      "alternatives": {
+        "alternative_0": "Thermite",
+        "alternative_1": "Jackal",
+        "alternative_2": "Capitão",
+        "alternative_3": "Buck"
+      }
+    },
+    "2":{
+      "title": "Qual desses operadores era jogável no evento Outbreak?",
+      "alternatives": {
+        "alternative_0": "Kapkan",
+        "alternative_1": "Pulse",
+        "alternative_2": "Mira",
+        "alternative_3": "Caveira"
+      }
+    },
+    "3":{
+      "title": "Qual desses operadores não possui conjunto elite?",
+      "alternatives": {
+        "alternative_0": "Hibana",
+        "alternative_1": "Caveira",
+        "alternative_2": "Lesion",
+        "alternative_3": "Castle"
+      }
+    },
+    "4":{
+      "title": "Qual foi a operação que adicionou as irmãs Zofia e Ela ao siege?",
+      "alternatives": {
+        "alternative_0": "White Noise",
+        "alternative_1": "Grim Sky",
+        "alternative_2": "Blood Orchid",
+        "alternative_3": "Elas vieram em operações diferentes"
+      }
+    }
+  },
+  "confirmar": "Confirmar",
+  "voce-errou": "Você errou",
+  "voce-acertou": "Você acertou",
+  "resultado": "Resultado",
+  "acertou": "Acertou",
+  "errou": "Errou",
+  "pergunta": "Pergunta",
+  "parabens": "Parabéns, ",
+  "perguntas": "perguntas",
+  "tente-novamente": "Não foi dessa vez tente novamente :("
+}

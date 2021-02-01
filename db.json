@@ -1,28 +1,59 @@
 {
-  "bg": "https://i2.wp.com/css-tricks.com/wp-content/uploads/2017/06/css-is-awesome-scaled.jpg?resize=1536%2C1208&ssl=1",
-  "title": "Quiz CSS da Alura",
-  "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+  "bg": "https://i.ibb.co/jJ9WVvD/Sem-t-tulo.png",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
-      "description": "Essa é pra aquecer",
+      "image": "https://c4.wallpaperflare.com/wallpaper/132/695/672/operation-blood-orchid-4k-rainbow-six-siege-wallpaper-preview.jpg",
+      "title": "Qual desses mapas pertence a operação Blood Orchid?",
       "answer": 2,
       "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
+        "Arranha-Céu",
+        "Litoral",
+        "Parque temático",
+        "Torre"
       ]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
+      "image": "https://gameplay.tips/uploads/posts/2019-09/1567556898_rainbow-six-siege.jpg",
+      "title": "Qual desses operadores nunca teve granada?",
+      "answer": 1,
+      "alternatives": [
+         "Thermite",
+         "Jackal",
+         "Capitão",
+         "Buck"
+      ]
+    },
+    {
+      "image": "https://i.imgur.com/kzOUJtX.png",
+      "title": "Qual desses operadores era jogável no evento Outbreak?",
       "answer": 0,
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+        "Kapkan",
+        "Pulse",
+        "Mira",
+        "Caveira"
+      ]
+    },
+    {
+      "image": "https://64.media.tumblr.com/0ac620647972c83879eb72a28261f539/tumblr_pwas4x6Peb1ql43puo6_500.gif",
+      "title": "Qual desses operadores não possui conjunto elite?",
+      "answer": 3,
+      "alternatives": [
+         "Hibana",
+         "Caveira",
+         "Lesion",
+         "Castle"
+      ]
+    },
+    {
+      "image": "https://i.redd.it/5k10nx84m5t11.png",
+      "title": "Qual foi a operação que adicionou as irmãs Zofia e Ela ao siege?",
+      "answer": 3,
+      "alternatives": [
+        "White Noise",
+        "Grim Sky",
+        "Blood Orchid",
+        "Elas vieram em operações diferentes"
       ]
     }
   ],
@@ -32,14 +63,16 @@
   ],
   "theme": {
     "colors": {
-      "primary": "#0d47a1",
-      "secondary": "#29b6f6",
-      "mainBg": "#171B35",
-      "contrastText": "#FFFFFF",
-      "wrong": "#FF5722",
-      "success": "#4CAF50"
+      "primary": "#EEAF2E",
+      "secondary": "#DEAA4E",
+      "mainBg": "#2D2D2E",
+      "contrastText": "#fdfffc",
+      "wrong": "#ef233c",      
+      "success": "#06d6a0"
     },
-    "borderRadius": "4px"
-  }
+    "borderRadius": "8px"
+  },
+  "brasil": "https://image.flaticon.com/icons/png/512/206/206597.png",
+  "usa": "https://image.flaticon.com/icons/png/512/206/206626.png"
 }
 

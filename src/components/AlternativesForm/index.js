@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const AlternativesForm = styled.form`
+  margin-top: 16px;
   label {
     &[data-selected="true"] {
       background-color: ${({ theme }) => theme.colors.primary};
